@@ -1,0 +1,177 @@
+<section class="content">
+  <div class="block-content">
+    <h3 class="block-title">Contacto</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="register()" [formGroup]="this.form">
+          <!--  <div class="form-control-wrap">
+                      <div id="message" class="alert alert-danger alert-dismissible fade"></div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" id="fname" placeholder="Nombre*" name="fname">
+                      </div>
+                      <div class="form-group mar-top-40">
+                          <input type="email" class="form-control" id="email" placeholder="Correo Electronico*" name="email">
+                      </div>
+                      <div class="form-group mar-top-60">
+                          <textarea class="form-control" rows="10" name="comment" id="comment" placeholder="Su Mensaje"></textarea>
+                      </div>
+                      <div class="form-group mar-top-40">
+                          <button type="submit" class="btn v7">Enviar Mensaje</button>
+                      </div>
+                  </div> -->
+
+          <div>
+            <label>Nombre</label>
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }"
+            />
+
+            <div
+              *ngIf="
+                form.controls['nombre'].touched &&
+                form.controls['nombre'].invalid
+              "
+              class="alert-danger"
+            >
+              <div *ngIf="this.form.get('nombre').errors.required">
+                Nombre es requerido
+              </div>
+            </div>
+
+            <label>Correo</label>
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }"
+            />
+            <div
+              *ngIf="
+                form.controls['email'].touched && form.controls['email'].invalid
+              "
+              class="alert-danger"
+            >
+              <div *ngIf="this.form.get('email').errors.required">
+                Correo es requerido
+              </div>
+            </div>
+
+            <label>Mensaje</label>
+
+            <textarea
+              formControlName="mensaje"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }"
+            ></textarea>
+
+            <div
+              *ngIf="
+                form.controls['mensaje'].touched &&
+                form.controls['mensaje'].invalid
+              "
+              class="alert-danger"
+            >
+              <div *ngIf="this.form.get('mensaje').errors.required">
+                Mensaje es requerido
+              </div>
+            </div>
+
+            <div class="form-group mar-top-40">
+              <button
+                class="btn btn-primary mb-2"
+                type="submit"
+                [disabled]="!form.valid"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
+
+          <div *ngIf="this.envio">
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">...</div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--  <div class="form-group">
+                    <app-text label="Nombre" name="nombre"></app-text>
+                </div>
+                <div class="form-group mar-top-40">
+                    <input type="email" class="form-control" id="email" placeholder="Correo Electronico*" name="email">
+                </div>
+                  <div class="form-group mar-top-40">
+                    <app-text-area label="Mensaje" name="mensaje"></app-text-area>
+                </div> -->
+        </form>
+      </div>
+
+      <div class="col-md-5 offset-md-1">
+        <div class="contact-content">
+          <div class="contact-icon">
+            <i class="ion-ios-location-outline"></i>
+          </div>
+          <div class="contact-details">
+            <h5>Dirección</h5>
+            <p>Tegucigalpa,Honduras</p>
+          </div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-icon">
+            <i class="ion-ios-telephone-outline"></i>
+          </div>
+          <div class="contact-details">
+            <h5>Telefono</h5>
+            <p><a href="tel:+50496151074">+504 9615-1074</a></p>
+          </div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-icon">
+            <i class="ion-ios-email-outline"></i>
+          </div>
+          <div class="contact-details">
+            <h5>Correo</h5>
+            <p>yahirisaacurbina@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
