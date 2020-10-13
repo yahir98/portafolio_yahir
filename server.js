@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 
-app.use(express.static(path.join(__dirname,'./www')));
+app.use(express.static(path.join(__dirname,'./dist/portafolio/')));
 
 
 app.get('*', function(req,res) {
