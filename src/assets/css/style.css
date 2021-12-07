@@ -611,19 +611,19 @@ h2.menu-item:before {
 }
 
 h2.about.menu-item:before {
-    content: '01';
+    content: '1';
 }
 
 h2.portfolio.menu-item:before {
-    content: '02';
+    content: '2';
 }
 
 h2.blog.menu-item:before {
-    content: '03';
+    content: '4';
 }
 
 h2.contact.menu-item:before {
-    content: '04';
+    content: '3';
 }
 
 .menu-block:hover h2.menu-item:before {
